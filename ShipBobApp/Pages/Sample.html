@@ -1,0 +1,73 @@
+﻿<div class="container">
+        <div class="row">
+                <div class="" id="loginModal">
+                    <div class="modal-body">
+                        <div class="well">
+                            <div id="myTabContent" class="tab-content">
+                                <div class="tab-pane active in" id="login">
+                                    <form name="myForm" ng-submit="submitUser()">
+                                        <div id="legend">
+                                            <legend class="">Sign Up</legend>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="firstname">First Name</label>
+                                            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                                                <input type="text" id="firstname" ng-model="firstname" name="firstname" placeholder="" class="form-control" required>
+                                                <span style="color:red" ng-show="myForm.user.$invalid">
+                                                    <span ng-show="myForm.user.$error.required">First Name is required.</span>
+                                                </span>
+                                            </div>
+                                            <label class="control-label" for="lastname">Last Name</label>
+                                            <div class="form-group lg" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                                                <input type="text" id="lastname" ng-model="lm" name="lastname" placeholder="" class="form-control lg" required>
+                                                <span style="color:red" ng-show="myForm.user.$invalid">
+                                                    <span ng-show="myForm.user.$error.required">Last is required.</span>
+                                                </span>
+                                            </div>
+
+                                            <div class="controls">
+                                                <button class="btn btn-success" ng-disabled="myForm.user.$invalid " value="Sign Up">Create User</button>
+                                            </div>
+                                            <div class="controls">
+                                                <label>{{Message}}</label>
+                                            </div>
+                                        </div>
+                                        </form>
+                                        <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    
+        <div id="legend">
+            <legend class="">List Of Users</legend>
+        </div>
+</div>
+      View <select ng-change="setItemsPerPage(viewby)" ng-model="viewby"><option selected>3</option><option>5</option><option>10</option><option>20</option><option>30</option><option>40</option><option>50</option></select> records at a time.
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="user in userData[0].slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) track by $index" 
+                 class="col-md-12">
+                <td>{{user.firstName}}</td><td> {{user.lastName}}</td>
+                <td ><button class="btn btn-primary" ng-click="getUserDetails($index)" style="align-content:flex-end">Create/Edit Order</button></td>
+                
+            </tr>
+            
+        </table>
+
+
+  
+    
+   
+
+
+
+

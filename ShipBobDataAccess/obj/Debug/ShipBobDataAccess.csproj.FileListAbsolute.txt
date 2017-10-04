@@ -1,0 +1,7 @@
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\obj\Debug\ShipBobDataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\obj\Debug\ShipBobDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\bin\Debug\ShipBobDataAccess.dll.config
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\bin\Debug\ShipBobDataAccess.dll
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\bin\Debug\ShipBobDataAccess.pdb
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\obj\Debug\ShipBobDataAccess.dll
+C:\Users\Prashanth\source\repos\ShipBobApp\ShipBobDataAccess\obj\Debug\ShipBobDataAccess.pdb
