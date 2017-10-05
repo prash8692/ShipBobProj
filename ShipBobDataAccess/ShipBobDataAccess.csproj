@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUserDataAccess.cs" />
     <Compile Include="IOrderDataAccess.cs" />
     <Compile Include="Models\OrderDetails.cs" />
     <Compile Include="UserDataAccess.cs" />

@@ -9,10 +9,10 @@ using ShipBobDataAccess.Utilities;
 
 namespace ShipBobDataAccess
 {
-    public class UserDataAccess : ShipBobDataAccess
+    public class UserDataAccess : ShipBobDataAccess, IUserDataAccess
     {
         private Action<SqlDataReader> mapUserToPOCO;
-        private List<UserDetailsVm> list = new List<UserDetailsVm>();
+        private List<UserDetails> list = new List<UserDetails>();
         public UserDataAccess()
         {
             mapUserToPOCO = MapUserToPOCO;
@@ -28,13 +28,13 @@ namespace ShipBobDataAccess
         public List<UserDetailsVm> ViewUser()
         {
 
-            list = GetEntityAll("Select * from dbo.users2");
-            return list;
+            GetEntity("Select * from dbo.users2", null, mapUserToPOCO);
+            return list.AsQueryable().Select(Mapper.MaptoUserDetailsVm).ToList();
         }
 
         private void MapUserToPOCO(SqlDataReader data)
         {
-            UserDetailsVm urs = new UserDetailsVm();
+            UserDetails urs = new UserDetails();
             urs.firstName = data["firstname"].ToString();
             urs.lastName = data["lastname"].ToString();
             urs.userId = data["userid"].ToString();

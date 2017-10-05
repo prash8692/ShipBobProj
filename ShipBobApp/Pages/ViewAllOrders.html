@@ -15,12 +15,12 @@
     <tbody>
         <tr ng-repeat="orders in orderData">
             <td>{{orders.trackingId}}</td>
-            <td><a href="#" class="active" editable-text="orders.name" required>{{orders.name}}</a></td>
-            <td><a href="#" class="active" editable-text="orders.street">{{orders.street }}</a></td>
-            <td><a href="#" class="active" editable-text="orders.address">{{orders.address}}</a></td>
-            <td><a href="#" class="active" editable-text="orders.city">{{orders.city}}</a></td>
-            <td><a href="#" editable-text="orders.state" e-uib-typeahead="state for state in states | filter:$viewValue | limitTo:8"> {{orders.state}}</a></td>
-            <td><a href="#" class="active" editable-text="orders.street">{{orders.zipcode}}</a></td>
+            <td><a href="#" class="active" data-toggle="tooltip" data-placement="top" title="Click to Edit" editable-text="orders.name" required>{{orders.name}}</a></td>
+            <td><a href="#" class="active" data-toggle="tooltip" data-placement="top" title="Click to Edit" editable-text="orders.street">{{orders.street }}</a></td>
+            <td><a href="#" class="active" data-toggle="tooltip" data-placement="top" title="Click to Edit" editable-text="orders.address">{{orders.address}}</a></td>
+            <td><a href="#" class="active" data-toggle="tooltip" data-placement="top" title="Click to Edit" editable-text="orders.city">{{orders.city}}</a></td>
+            <td><a href="#" data-toggle="tooltip" data-placement="top" title="Click to Edit" editable-text="orders.state" e-uib-typeahead="state for state in states | filter:$viewValue | limitTo:8"> {{orders.state}}</a></td>
+            <td><a href="#" data-toggle="tooltip" data-placement="top" title="Click to Edit" class="active" editable-text="orders.street">{{orders.zipcode}}</a></td>
             <td><button class="btn btn-success" ng-click="update(orders)">Update</button></td>
             <td><button class="btn btn-danger" ng-click="delete(orders)">Delete</button></td>
         </tr>

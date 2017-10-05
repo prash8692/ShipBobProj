@@ -56,10 +56,15 @@ shipBobApp.controller('homeController', ['$scope', '$rootScope', '$location', '$
     };
 
     $scope.getUserDetails = function (index) {
-        console.log($scope.userData);
 
         var data = $scope.userData[0][index].userId;
         $location.path('/Orders/'+data) ;
+    }
+
+    $scope.createOrder = function (index) {
+        var data = $scope.userData[0][index].userId;
+        $location.path('/CreateOrder/' + data);
+
     }
 
     $scope.viewby = 3;
@@ -80,13 +85,4 @@ shipBobApp.controller('homeController', ['$scope', '$rootScope', '$location', '$
         $scope.itemsPerPage = num;
         $scope.currentPage = 1; //reset to first page
     };
-}]);
-
-
-
-shipBobApp.controller('ModelHandlerController', ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
-    console.log("Modal");
-
- 
-   
 }]);

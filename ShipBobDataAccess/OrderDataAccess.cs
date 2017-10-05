@@ -34,7 +34,7 @@ namespace ShipBobDataAccess
 
         public List<OrderDetailsVm> GetOrdersAll()
         {
-            GetEntityAllOrders("Select * from dbo.orders;", mapToOrderDetailsPOCO);
+            GetEntity("Select * from dbo.orders;", null, mapToOrderDetailsPOCO);
             return listOrder.AsQueryable().Select(Mapper.MaptoOrderDetailsVm).ToList();
         }
 

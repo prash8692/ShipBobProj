@@ -57,61 +57,7 @@ namespace ShipBobDataAccess
             {
                 conn.Close();
             }
-
         }
-        public List<UserDetailsVm> GetEntityAll(string statement)
-        {
-            SqlDataReader reader;
-            List<UserDetailsVm> list = new List<UserDetailsVm>();
-            try
-            {
-                SqlCommand cmd = SetUpConnectionWithoutParams(statement);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    UserDetailsVm userDetailVm = new UserDetailsVm();
-                    userDetailVm.firstName = reader["firstname"].ToString();
-                    userDetailVm.lastName = reader["lastname"].ToString();
-                    userDetailVm.userId = reader["userid"].ToString();
-                    list.Add(userDetailVm);
-                }
-                return list;
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine(e.StackTrace);
-                return null;
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-        }
-        
-        public SqlDataReader GetEntityAllOrders(string statement, Action<SqlDataReader> mapResult)
-        {
-            SqlDataReader reader;
-            try
-            {
-                SqlCommand cmd = SetUpConnectionWithoutParams(statement);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    mapResult?.Invoke(reader);
-                }
-                return reader;
-            }
-            catch (Exception e)
-            {
-                System.Diagnostics.Debug.WriteLine(e.StackTrace);
-                return null;
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }        
 
         #region private Helpers 
         private SqlCommand SetUpConnection(string statement, Dictionary<string, object> parameters)
@@ -119,9 +65,12 @@ namespace ShipBobDataAccess
             conn = new SqlConnection(sqlConnection);
             conn.Open();
             SqlCommand cmd = new SqlCommand(statement, conn);
-            foreach (var param in parameters)
+            if (parameters != null)
             {
-                cmd.Parameters.AddWithValue(param.Key, param.Value);
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                }
             }
             
             return cmd;
