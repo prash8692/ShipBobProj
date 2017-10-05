@@ -13,7 +13,14 @@ namespace ShipBobDataAccess
     {
         readonly string sqlConnection = ConfigurationManager.ConnectionStrings["shipbob"].ConnectionString;
         private SqlConnection conn;
-        public SqlDataReader GetEntity(string statement, Dictionary<string, object> parameters, Action<SqlDataReader> mapResult)
+        /// <summary>
+        /// Get Entities
+        /// </summary>
+        /// <param name="statement"></param>
+        /// <param name="parameters"></param>
+        /// <param name="mapResult"></param>
+        /// <returns></returns>
+        public void GetEntity(string statement, Dictionary<string, object> parameters, Action<SqlDataReader> mapResult)
         {
             SqlDataReader reader;
             try
@@ -24,12 +31,12 @@ namespace ShipBobDataAccess
                 {
                     mapResult?.Invoke(reader);
                 }
-                return reader;
+                
             }
             catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine(e.StackTrace);
-                return null;
+                
             }
             finally
             {
@@ -75,15 +82,6 @@ namespace ShipBobDataAccess
             
             return cmd;
         }
-        private SqlCommand SetUpConnectionWithoutParams(string statement)
-        {
-            conn = new SqlConnection(sqlConnection);
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(statement, conn);
-
-            return cmd;
-        }
-        
-        #endregion
     }
 }
+#endregion

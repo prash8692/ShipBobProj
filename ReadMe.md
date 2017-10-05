@@ -6,6 +6,18 @@ This application allows user to
 3. Update Orders
 4. Delete Orders
 
+## API Calls from Front-end to Business Logic:
+
+| Description        | API Calls           |
+| ------------- |:-------------:|
+| Get All Order       | /Order/GetAllOrders |
+| Creata Order      |/Order/CretaeOrder      |  
+| Update Order  | /Order/UpdateOrder/{trackingId}      |  
+| Delete Order | /Order/DeleteOrder/{trackingId}|
+|Get Order| /Order/GetOrder/{userId}|
+|Get All User |/Home/GetUser|  
+|Create User|/Home/CreateUser/{User}|
+
 ## Screenshots:
 ### Create User and User look up page
 

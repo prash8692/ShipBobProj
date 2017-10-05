@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBobApp", "ShipBobApp\ShipBobApp.csproj", "{9ACBD726-089C-4F2A-82A6-B3D5A8553E86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBobDataAccess", "ShipBobDataAccess\ShipBobDataAccess.csproj", "{0F882F2B-C21A-4736-BBC4-664AE615B833}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShipBobDAL", "ShipBobDataAccess\ShipBobDAL.csproj", "{0F882F2B-C21A-4736-BBC4-664AE615B833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

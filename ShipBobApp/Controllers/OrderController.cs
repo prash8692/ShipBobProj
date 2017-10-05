@@ -24,24 +24,24 @@ namespace ShipBobApp.Controllers
             _ordDataAccess = new OrderDataAccesss();
         }
         
-        public JsonResult GetOrder([FromBody]UserDetails userDetails)
+        public JsonResult GetOrder(UserDetails userDetails)
         {
             return Json(_ordDataAccess.GetOrders(userDetails.userId));
             
         }
-        public void UpdateOrder([FromBody]OrderDetails orderDetails)
+        public void UpdateOrder(OrderDetails orderDetails)
         {
 
             _ordDataAccess.UpdateOrder(orderDetails);
         }
 
-        public void CretaeOrder([FromBody]OrderDetails orderDetails)
+        public void CretaeOrder(OrderDetails orderDetails)
         {
             _ordDataAccess.CreateOrder(orderDetails);
             
         }
 
-        public void DeleteOrder([FromBody]string trackingId)
+        public void DeleteOrder(string trackingId)
         {
             _ordDataAccess.DeleteOrder(trackingId);
             

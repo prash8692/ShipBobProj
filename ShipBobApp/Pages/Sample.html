@@ -12,14 +12,14 @@
                                         <div class="control-group">
                                             <label class="control-label" for="firstname">First Name</label>
                                             <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-                                                <input type="text" id="firstname" ng-model="firstname" name="firstname" placeholder="" class="form-control" required>
+                                                <input  ng-model="firstname"  placeholder="First Name" class="form-control" required>
                                                 <span style="color:red" ng-show="myForm.user.$invalid">
                                                     <span ng-show="myForm.user.$error.required">First Name is required.</span>
                                                 </span>
                                             </div>
                                             <label class="control-label" for="lastname">Last Name</label>
                                             <div class="form-group lg" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
-                                                <input type="text" id="lastname" ng-model="lm" name="lastname" placeholder="" class="form-control lg" required>
+                                                <input ng-model="lm" placeholder="Last Name" class="form-control lg" required>
                                                 <span style="color:red" ng-show="myForm.user.$invalid">
                                                     <span ng-show="myForm.user.$error.required">Last is required.</span>
                                                 </span>
@@ -57,7 +57,7 @@
             <tr ng-repeat="user in userData[0].slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) track by $index" >
                 <td>{{user.firstName}}</td><td> {{user.lastName}}</td>
                 <td ><button class="btn btn-warning" ng-click="getUserDetails($index)">Edit Order</button></td>
-                <td><button class="btn btn-primary" ng-click="createOrder($index)">Create</button></td>
+                <td><button class="btn btn-primary" ng-click="createOrder($index)">Create Order</button></td>
                 
             </tr>
             

@@ -1019,9 +1019,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShipBobDataAccess\ShipBobDataAccess.csproj">
+    <ProjectReference Include="..\ShipBobDataAccess\ShipBobDAL.csproj">
       <Project>{0f882f2b-c21a-4736-bbc4-664ae615b833}</Project>
-      <Name>ShipBobDataAccess</Name>
+      <Name>ShipBobDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

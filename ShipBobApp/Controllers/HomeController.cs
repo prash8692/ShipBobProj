@@ -24,7 +24,7 @@ namespace ShipBobApp.Controllers
             return View();
         }
 
-        public void UserData(UserDetails userDetails)
+        public void CreateUser(UserDetails userDetails)
         {
 
             _userDataAccess.CreateUser(userDetails);

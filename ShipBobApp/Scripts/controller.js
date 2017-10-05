@@ -1,5 +1,4 @@
 ﻿
-
 shipBobApp.controller('homeController', ['$scope', '$rootScope', '$location', '$http', '$route','filterFilter', function ($scope, $rootScope, $location, $http, $route, filterFilter) {
     $scope.viewby ;
     $scope.oneAtATime = true;
@@ -38,7 +37,7 @@ shipBobApp.controller('homeController', ['$scope', '$rootScope', '$location', '$
             };
             result = $http({
                 method: 'POST',
-                url: '/Home/UserData',
+                url: '/Home/CreateUser',
                 data: { userDetails: $scope.UserDetails },
                 headers: {
                     "Content-Type": "application/json"
