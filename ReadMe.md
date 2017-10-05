@@ -11,7 +11,7 @@ This application allows user to
 | Description        | API Calls           |
 | ------------- |:-------------:|
 | Get All Order       | /Order/GetAllOrders |
-| Creata Order      |/Order/CretaeOrder      |  
+| Creata Order      |/Order/CretaeOrder/{Order}     |  
 | Update Order  | /Order/UpdateOrder/{trackingId}      |  
 | Delete Order | /Order/DeleteOrder/{trackingId}|
 |Get Order| /Order/GetOrder/{userId}|
